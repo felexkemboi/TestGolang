@@ -4,6 +4,9 @@ import (
 	"database/sql"
 	_"github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
+	"encode/json"
+	"fmt"
+	"io/ioutil"
 )
 
 var db *sql.DB
@@ -25,6 +28,6 @@ func main(){
   	router.HandleFunc("/posts/{id}", getPost).Methods("GET")
   	router.HandleFunc("/posts/{id}", updatePost).Methods("PUT")
   	router.HandleFunc("/posts/{id}", deletePost).Methods("DELETE")
-  	
+
 	http.ListenAndServe(":8000", router)
 }
