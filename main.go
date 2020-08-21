@@ -28,6 +28,7 @@ func main(){
 		panic(err.Error())
 	}
 
+
 	defer db.Close()
 
 	router :=mux.NewRouter()
